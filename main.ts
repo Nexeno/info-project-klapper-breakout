@@ -7,6 +7,10 @@ input.onButtonPressed(Button.A, function () {
         padle_1.change(LedSpriteProperty.X, -1)
         padle_2.change(LedSpriteProperty.X, -1)
         padle_location += -1
+    } else if (padle_location == 2) {
+        padle_1.change(LedSpriteProperty.X, -1)
+        padle_2.change(LedSpriteProperty.X, -1)
+        padle_location += -1
     } else {
     	
     }
@@ -17,6 +21,10 @@ input.onButtonPressed(Button.B, function () {
         padle_2.change(LedSpriteProperty.X, 1)
         padle_location += 1
     } else if (padle_location == -1) {
+        padle_1.change(LedSpriteProperty.X, 1)
+        padle_2.change(LedSpriteProperty.X, 1)
+        padle_location += 1
+    } else if (padle_location == 1) {
         padle_1.change(LedSpriteProperty.X, 1)
         padle_2.change(LedSpriteProperty.X, 1)
         padle_location += 1
@@ -62,14 +70,12 @@ basic.forever(function () {
     }
     if (win_state == 5) {
         basic.showIcon(IconNames.Yes)
-        game.pause()
     }
     if (ball.isTouching(padle_1)) {
         basic.showIcon(IconNames.No)
         game.pause()
     } else if (ball.isTouching(padle_2)) {
         basic.showIcon(IconNames.No)
-        game.pause()
     } else {
     	
     }
